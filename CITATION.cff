@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: "Mineral-Pathway Transcriptional and Molecular Responses to Spaceflight: A Multi-Omics Analysis of Astronaut and Rodent Data"
+message: "If you use this software or data, please cite it as below."
+type: software
+authors:
+  - given-names: Richard
+    family-names: Barker
+    email: rbarker@purdue.edu
+    affiliation: "NASA GeneLab / OSDR, Purdue University"
+preferred-citation:
+  type: article
+  title: "Mineral-Pathway Transcriptional and Molecular Responses to Spaceflight: A Multi-Omics Analysis of Astronaut and Rodent Data"
+  authors:
+    - given-names: Richard
+      family-names: Barker
+      affiliation: "NASA GeneLab / OSDR, Purdue University"
+  journal: "npj Microgravity"
+  year: 2026
+keywords:
+  - spaceflight
+  - mineral deficiency
+  - multi-omics
+  - transcriptomics
+  - proteomics
+  - metabolomics
+  - KEGG pathways
+  - NASA OSDR
+  - Inspiration4
+  - cross-species
+  - machine learning
+  - NHANES
+license: MIT
+repository-code: "https://github.com/dr-richard-barker/astronaut-mineral-deficiency-multiomics"
+version: "1.0.0"
+date-released: "2026-08-30"
