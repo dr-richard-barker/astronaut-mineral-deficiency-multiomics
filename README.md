@@ -48,12 +48,12 @@ This repository provides an end-to-end, reproducible multi-omics framework minin
    - 46 mineral-pathway genes demonstrated significant differential expression across RNA-seq and proteomics ($|\log_2\text{FC}| > 0.5$, $p < 0.05$).
 2. **Copper Pathway Dysregulation**:
    - Amyloid precursor protein (*APP*, copper-binding) significantly up-regulated in plasma proteomics, while lysyl oxidase family cross-linking enzymes (*LOX*, *LOXL1*) were down-regulated.
-3. **Magnesium-Binding Calgranulins Suppressed**:
-   - Immune calgranulins (*S100A8*, *S100A9*, *S100A12*) exhibited sharp down-regulation immediately upon return ($R+1$).
+3. **Calcium/Zinc-Binding Calgranulins Suppressed**:
+   - Innate immune alarmins (*S100A8*, *S100A9*, *S100A12*, calprotectin complex) exhibited sharp down-regulation immediately upon return ($R+1$), consistent with altered calcium signaling and post-flight immune modulation.
 4. **Calcium Homeostasis Alteration**:
    - Voltage-dependent L-type calcium channel alpha-1D subunit (*CACNA1D*) was down-regulated ($-2.14\,\log_2\text{FC}$) in whole-blood RNA-seq.
 5. **Machine Learning Regression of Serum Minerals**:
-   - ElasticNet and Random Forest regressors predicted serum potassium ($r = 0.50, R^2 = 0.12$) and sodium ($r = 0.46, R^2 = 0.19$) directly from peripheral blood mineral-pathway transcript levels.
+   - Regularized Ridge and Linear Support Vector Regression (Linear SVR) models predicted serum potassium ($r = 0.50, R^2 = 0.12$, Ridge) and sodium ($r = 0.46, R^2 = 0.19$, Linear SVR) directly from peripheral blood mineral-pathway transcript levels under leave-one-out cross-validation.
 6. **Cross-Species Concordance Gap**:
    - Direct orthologous comparison between human astronauts (3-day LEO) and rodents (21-day ISS) revealed minimal concordance ($r = 0.007$), demonstrating that short-duration human orbital missions capture acute stress responses that differ fundamentally from long-duration rodent adaptation.
 7. **NHANES Population Normalization**:

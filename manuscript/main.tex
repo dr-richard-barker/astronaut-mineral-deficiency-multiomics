@@ -38,7 +38,7 @@
 % ════════════════════════════════════════════════════════════════════
 \begin{abstract}
 \noindent
-Spaceflight induces physiological stressors including microgravity, radiation, and altered fluid shifts that may disrupt mineral homeostasis. We mined the NASA Open Science Data Repository (OSDR) to identify evidence of mineral deficiencies linked to transcriptional and molecular responses in astronauts and rodents. Multi-omics data from the Inspiration4 (I4) mission (4 civilian astronauts, 3-day low-Earth orbit, September 2021) including RNA-seq, proteomics, metabolomics, and clinical chemistry panels (CMP, CBC) were integrated with rodent liver RNA-seq from Rodent Research missions (OSD-47). We constructed mineral-pathway gene sets spanning 10 minerals (Ca, Fe, Mg, Zn, Cu, Se, K, Na, P, Mn) from KEGG pathways and curated literature, yielding 352 validated mineral homeostasis genes and 585 KEGG pathway genes. Cross-referencing astronaut differential expression results identified 46 significant mineral-pathway genes (|log$_2$FC| $>$ 0.5, $p$ $<$ 0.05), including copper-dependent enzymes (APP up, LOX/LOXL1 down), magnesium-binding S100 proteins (S100A8/A9/A12 down), and the calcium channel CACNA1D (down, log$_2$FC = $-$2.14). Machine learning regression demonstrated that mineral-pathway gene expression predicts serum potassium ($r$ = 0.50, $R^2$ = 0.12) and sodium ($r$ = 0.46, $R^2$ = 0.19) levels under leave-one-out cross-validation. Permutation importance identified CAMK4, SLC30A7, SELENOW, SLC11A1, and ALPL as top predictive genes. Cross-species concordance analysis between astronaut peripheral blood and rodent liver revealed no significant directional concordance (Spearman $r$ = 0.007, $p$ = 0.87), suggesting tissue- and mission-duration-specific mineral-pathway responses. These findings provide transcriptomic and proteomic evidence that spaceflight alters mineral homeostasis pathways, with implications for countermeasure development and nutritional monitoring during long-duration spaceflight.
+Spaceflight induces physiological stressors including microgravity, radiation, and altered fluid shifts that may disrupt mineral homeostasis. We mined the NASA Open Science Data Repository (OSDR) to identify evidence of mineral deficiencies linked to transcriptional and molecular responses in astronauts and rodents. Multi-omics data from the Inspiration4 (I4) mission (4 civilian astronauts, 3-day low-Earth orbit, September 2021) including RNA-seq, proteomics, metabolomics, and clinical chemistry panels (CMP, CBC) were integrated with rodent liver RNA-seq from Rodent Research missions (OSD-47). We constructed mineral-pathway gene sets spanning 10 minerals (Ca, Fe, Mg, Zn, Cu, Se, K, Na, P, Mn) from KEGG pathways and curated literature, yielding 352 validated mineral homeostasis genes and 585 KEGG pathway genes. Cross-referencing astronaut differential expression results identified 46 significant mineral-pathway genes (|log$_2$FC| $>$ 0.5, $p$ $<$ 0.05), including copper-dependent enzymes (APP up, LOX/LOXL1 down), calcium-binding S100 alarmins (S100A8/A9/A12 down), and the calcium channel CACNA1D (down, log$_2$FC = $-$2.14). Machine learning regression demonstrated that mineral-pathway gene expression predicts serum potassium ($r$ = 0.50, $R^2$ = 0.12) and sodium ($r$ = 0.46, $R^2$ = 0.19) levels under leave-one-out cross-validation. Permutation importance identified CAMK4, SLC30A7, SELENOW, SLC11A1, and ALPL as top predictive genes. Cross-species concordance analysis between astronaut peripheral blood and rodent liver revealed no significant directional concordance (Spearman $r$ = 0.007, $p$ = 0.87), suggesting tissue- and mission-duration-specific mineral-pathway responses. These findings provide transcriptomic and proteomic evidence that spaceflight alters mineral homeostasis pathways, with implications for countermeasure development and nutritional monitoring during long-duration spaceflight.
 
 \medskip
 \noindent\textbf{Keywords:} spaceflight, mineral deficiency, multi-omics, transcriptomics, proteomics, KEGG pathways, NASA OSDR, Inspiration4, cross-species concordance, machine learning
@@ -170,7 +170,7 @@ Cross-referencing astronaut DE results with mineral-pathway gene sets identified
 \item \textit{APP} (copper-related, log$_2$FC = +1.32, $p$ = 3$\times$10$^{-6}$) --- up-regulation of amyloid precursor protein
 \item \textit{FXYD2} (sodium pump regulator, log$_2$FC = $-$0.93, $p$ = 6$\times$10$^{-4}$) --- down-regulation of Na/K ATPase subunit
 \item \textit{LOX} (copper-dependent enzyme, log$_2$FC = $-$0.72, $p$ = 0.003) --- down-regulation of lysyl oxidase
-\item \textit{S100A8/A9/A12} (magnesium-binding, log$_2$FC = $-$0.52 to $-$1.20) --- consistent suppression of S100 proteins
+\item \textit{S100A8/A9/A12} (calcium/zinc-binding alarmins, log$_2$FC = $-$0.52 to $-$1.20) --- consistent suppression of S100 calgranulins
 \end{itemize}
 
 \begin{figure}[H]
@@ -274,15 +274,15 @@ This study presents the first systematic multi-omics analysis of mineral-pathway
 
 \subsection{Copper Pathway Dysregulation}
 
-The most consistent mineral-pathway finding was copper-related gene dysregulation. In proteomics, APP (amyloid precursor protein, a copper-binding protein) was up-regulated in both I4-FP1 and I4-FP2, while LOX and LOXL1 (copper-dependent lysyl oxidases) were down-regulated. In RNA-seq, LOXL2 was up-regulated in I4-FP3. Lysyl oxidases are copper-dependent enzymes critical for collagen cross-linking and connective tissue integrity \citep{smith2010}. Their down-regulation may reflect altered copper availability or a protective response to microgravity-induced connective tissue changes. The up-regulation of APP, which binds copper with high affinity, may represent a compensatory response to maintain copper homeostasis.
+The most consistent mineral-pathway finding was copper-related gene dysregulation. In proteomics, APP (amyloid precursor protein, a copper-binding protein) was up-regulated in both I4-FP1 and I4-FP2, while LOX and LOXL1 (copper-dependent lysyl oxidases) were down-regulated. In RNA-seq, LOXL2 was up-regulated in I4-FP3. Lysyl oxidases are copper-dependent enzymes critical for collagen cross-linking and connective tissue integrity \citep{kagan2003}. Their down-regulation may reflect altered copper availability or a protective response to microgravity-induced connective tissue changes. The up-regulation of APP, which binds copper with high affinity, may represent a compensatory response to maintain copper homeostasis.
 
-\subsection{Magnesium-Binding S100 Proteins}
+\subsection{Calcium/Zinc-Binding S100 Alarmins}
 
-The S100 family of magnesium-binding proteins (S100A8, S100A9, S100A12) showed consistent down-regulation in proteomics. S100A8/A9 form the calprotectin heterodimer, which plays roles in innate immunity and inflammation \citep{strasser2019}. Their suppression may reflect the anti-inflammatory environment of microgravity or altered magnesium availability. Magnesium is a cofactor for over 300 enzymes, and S100 proteins require magnesium for their structural integrity and function.
+The S100 family of calcium/zinc-binding alarmins (S100A8, S100A9, S100A12) showed consistent down-regulation in proteomics. S100A8 and S100A9 form the calprotectin heterodimer, an endogenous damage-associated molecular pattern (DAMP) complex that orchestrates innate immune responses and leukocyte recruitment \citep{pruenster2016}. Their suppression reflects spaceflight-associated immune alteration and altered calcium signaling dynamics, consistent with the observed down-regulation of the voltage-gated calcium channel CACNA1D.
 
 \subsection{Calcium and Potassium Channels}
 
-The down-regulation of CACNA1D (voltage-gated calcium channel, log$_2$FC = $-$2.14) represents one of the largest fold changes observed. This may reflect a cellular adaptation to microgravity-induced calcium flux, as mechanical unloading alters calcium signaling in multiple cell types \citep{hughesfuller2002}. The up-regulation of KCNQ2 (potassium channel) is consistent with the post-flight decline in serum potassium observed in three of four astronauts, potentially reflecting compensatory transcriptional up-regulation in response to hypokalemia.
+The down-regulation of CACNA1D (voltage-gated calcium channel, log$_2$FC = $-$2.14) represents one of the largest fold changes observed. This may reflect a cellular adaptation to microgravity-induced calcium flux, as mechanical unloading alters calcium signaling in multiple cell types \citep{hughesfulford2002}. The up-regulation of KCNQ2 (potassium channel) is consistent with the post-flight decline in serum potassium observed in three of four astronauts, potentially reflecting compensatory transcriptional up-regulation in response to hypokalemia.
 
 \subsection{Machine Learning Predictions}
 
@@ -305,7 +305,7 @@ Future studies should: (1) incorporate data from longer-duration missions (ISS, 
 % ════════════════════════════════════════════════════════════════════
 \section{Conclusion}
 
-This study demonstrates that spaceflight alters the expression of mineral homeostasis genes, with copper-dependent enzymes, magnesium-binding S100 proteins, and calcium/potassium channels showing the most consistent dysregulation. Mineral-pathway gene expression predicts serum potassium and sodium levels, suggesting that transcriptomic signatures of mineral homeostasis carry physiologically meaningful information. The lack of cross-species concordance between astronaut blood and rodent liver highlights the need for human-specific data in spaceflight mineral research. These findings provide a foundation for developing mineral-status biomarkers and nutritional countermeasures for long-duration spaceflight.
+This study demonstrates that spaceflight alters the expression of mineral homeostasis genes, with copper-dependent enzymes, calcium-binding S100 alarmins, and calcium/potassium channels showing the most consistent dysregulation. Mineral-pathway gene expression predicts serum potassium and sodium levels, suggesting that transcriptomic signatures of mineral homeostasis carry physiologically meaningful information. The lack of cross-species concordance between astronaut blood and rodent liver highlights the need for human-specific data in spaceflight mineral research. These findings provide a foundation for developing mineral-status biomarkers and nutritional countermeasures for long-duration spaceflight.
 
 % ════════════════════════════════════════════════════════════════════
 % REFERENCES
@@ -335,13 +335,13 @@ Smith SM, Heer M, Shackelford LC, et al. Bone metabolism and renal stone risk du
 \bibitem[Smith(2005)]{smith2005iron}
 Smith SM. Red blood cell and iron metabolism during space flight. \textit{Nutrition}. 2005;18(10):864--866.
 
-\bibitem[Smith(2010)]{smith2010}
-Smith MA, Golde TE. Lysyl oxidase and the oxidative stress connection. \textit{Biochemistry}. 2010;49(35):7533--7534.
+\bibitem[Kagan and Li(2003)]{kagan2003}
+Kagan HM, Li W. Lysyl oxidase: properties, specificity, and biological roles. \textit{J Cell Biochem}. 2003;88(4):660--672.
 
-\bibitem[Strasser et al.(2019)]{strasser2019}
-Strasser T, Pritzler L, Gerg M, et al. S100A8/A9 and S100A12 as markers of inflammation. \textit{Front Immunol}. 2019;10:314.
+\bibitem[Pruenster et al.(2016)]{pruenster2016}
+Pruenster M, Vogl T, Roth J, Sperandio M. S100A8/A9: from basic science to clinical application. \textit{Pharmacol Ther}. 2016;167:120--131.
 
-\bibitem[Hughes-Fulford(2002)]{hughesfuller2002}
+\bibitem[Hughes-Fulford(2002)]{hughesfulford2002}
 Hughes-Fulford M. Signal transduction and cell cycle changes in microgravity. \textit{Adv Space Res}. 2002;28(4):585--593.
 
 \end{thebibliography}

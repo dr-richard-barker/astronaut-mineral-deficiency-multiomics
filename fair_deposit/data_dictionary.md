@@ -8,7 +8,7 @@
 |------|-------------|------|---------|
 | `astronaut_minerals_cmp.csv` | Comprehensive Metabolic Panel mineral data (Ca, K, Na, Cl, CO2) | 28 | 7 |
 | `astronaut_minerals_combined.csv` | CMP + CBC combined (minerals + hemoglobin/hematocrit) | 28 | 13 |
-| `astronaut_cbc_full.csv` | Complete blood count data | 28 | 9 |
+| `astronaut_cbc_full.csv` | Complete blood count data with 5-part differential | 28 | 25 |
 | `astronaut_cbc_iron_proxy.csv` | CBC iron proxy (hemoglobin, hematocrit, RBC) | 28 | 8 |
 | `astronaut_rnaseq_de.csv` | RNA-seq differential expression (DESeq2 + pipeline) | 185,556 | 8 |
 | `astronaut_rnaseq_de_mapped.csv` | RNA-seq DE with gene symbols mapped | 136,650 | 10 |
@@ -24,8 +24,9 @@
 | `mineral_pathway_crosswalk.csv` | Gene → minerals + KEGG pathways mapping | CSV (801 rows) |
 | `kegg_pathway_genes.csv` | KEGG pathway → gene mapping | CSV (585 rows) |
 | `ensembl_to_symbol.csv` | ENSEMBL ID → gene symbol mapping | CSV (61,852 rows) |
+| `mouse_to_human_orthologs.csv` | Ensembl / mygene.info mouse-to-human ortholog crosswalk | CSV (16,589 rows) |
 
-### Analysis Results
+### Analysis Results & Population Baseline
 
 | File | Description |
 |------|-------------|
@@ -33,11 +34,19 @@
 | `ml_classification_results.csv` | ML flight vs ground classification results (LOO-CV) |
 | `ml_model_comparison.csv` | Model comparison table (5 classifiers) |
 | `ml_regression_results.csv` | Mineral level regression results (4 targets × 4 models) |
+| `ml_classification_results_v2.csv` | ML flight vs ground classification results (stratified inner CV tuning) |
+| `ml_model_comparison_v2.csv` | Model comparison table (ElasticNet, Logistic, RF, GBDT, Linear SVM, Dummy) |
+| `ml_selected_features_v2.csv` | Selected top mineral-pathway predictive features with weights |
 | `permutation_importance_classification.csv` | Gene importance for flight/ground classification |
 | `permutation_importance_potassium.csv` | Gene importance for potassium regression |
 | `permutation_importance_sodium.csv` | Gene importance for sodium regression |
 | `rodent_liver_de_human_mapped.csv` | Rodent liver DE with human ortholog mapping |
 | `cross_species_concordance.csv` | Cross-species concordance analysis results |
+| `cross_species_meta_summary.csv` | Multi-study rodent meta-analysis random-effects summary (k=28) |
+| `nhanes_reference_stats.csv` | CDC NHANES reference statistics (mean, SD, percentiles P1-P99) for 15 analytes (age 40-60, N=5,400+) |
+| `astronaut_zscores.csv` | Standardized astronaut clinical z-scores relative to age-matched NHANES baseline |
+| `astronaut_percentile_ranks.csv` | Astronaut empirical percentile ranks in the NHANES population distribution |
+| `nhanes_onesample_tests.csv` | 105 one-sample t-tests and Wilcoxon tests evaluating astronaut departure from population norms |
 
 ## Column Descriptions
 
@@ -90,9 +99,21 @@
 | `fig1_heatmap_mineral_de.svg` | Heatmap of top 40 mineral-pathway DE genes |
 | `fig2_volcano_rnaseq.svg` | Volcano plot with mineral genes highlighted |
 | `fig3_barplot_importance.svg` | Permutation importance for K/Na regression |
+| `fig3_roc_pr_curves.svg` | ROC and Precision-Recall curves for ML classification |
 | `fig4_sankey_omics_minerals.svg` | Sankey: omics → minerals → KEGG pathways |
 | `fig5_circos_mineral_pathway.svg` | Circos: mineral-gene-pathway network |
 | `fig6_knowledge_graph.svg` | Knowledge graph of mineral-gene-pathway network |
 | `fig7_mineral_trajectories.svg` | Serum mineral trajectories over time |
 | `fig8_systems_biology_atlas.svg` | Composite systems biology atlas (5 panels) |
 | `fig9_pathway_expression_summary.svg` | Per-pathway gene expression summary |
+| `fig_s6_nhanes_trajectories.svg` | Longitudinal astronaut clinical trajectories overlaid with CDC NHANES P2.5-P97.5 population reference bands |
+| `fig_s7_zscore_heatmap.svg` | Heatmap of mean astronaut z-scores (15 clinical analytes × 7 timepoints) against NHANES baseline |
+| `fig_s8_percentile_ranks.svg` | Dot plot of individual astronaut percentile ranks across 15 analytes and all mission timepoints |
+| `figS1_gsea_enrichment.svg` | Gene Set Enrichment Analysis (GSEA) waterfall plot |
+| `figS2_time_resolved_heatmap.svg` | Time-resolved mineral DE heatmap across longitudinal timepoints |
+| `figS3_forest_cross_species.svg` | Forest plot of cross-species meta-analysis effect sizes across tissues |
+| `figS4_tissue_pathway_heatmap.svg` | Multi-tissue rodent mineral pathway expression heatmap |
+| `figS5_scatter_cross_species.svg` | Cross-species log2FC concordance scatter plot |
+| `figS6_permutation_null.svg` | ML permutation test null distribution vs observed performance |
+| `figS7_confusion_matrix.svg` | Confusion matrix of spaceflight classification |
+| `figS8_selected_features.svg` | Feature importance weights of top selected predictive genes |

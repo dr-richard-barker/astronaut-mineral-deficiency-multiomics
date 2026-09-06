@@ -60,6 +60,10 @@ CURATED_MINERAL_GENES = {
         "CAMK4", "PPP3CA", "PPP3CB", "PPP3CC", "PPP3R1", "PPP3R2",
         "PLCB1", "PLCB2", "PLCB3", "PLCB4", "PLCG1", "PLCG2", "PLCD1", "PLCE1",
         "TRPV5", "TRPV6", "TRPV1", "TRPV2", "TRPV3", "TRPV4",
+        # EF-hand calcium-binding proteins & alarmins
+        "S100A1", "S100A2", "S100A4", "S100A6", "S100A8", "S100A9",
+        "S100A10", "S100A11", "S100A12", "S100B",
+        "PVALB", "CALB1", "CALB2", "HPCAL1", "HPCAL2", "HPCA",
     ],
     "Zinc": [
         "MT1A", "MT1B", "MT1E", "MT1F", "MT1G", "MT1H", "MT1M", "MT1X", "MT2A",
@@ -85,9 +89,6 @@ CURATED_MINERAL_GENES = {
         "TRPM6", "TRPM7", "CNNM1", "CNNM2", "CNNM3", "CNNM4",
         "SLC41A1", "SLC41A2", "SLC41A3", "MAGT1", "NIPA1", "NIPA2", "NIPAL1",
         "CAMLG",
-        "S100A1", "S100A2", "S100A4", "S100A6", "S100A8", "S100A9",
-        "S100A10", "S100A11", "S100A12", "S100B",
-        "PVALB", "CALB1", "CALB2", "HPCAL1", "HPCAL2", "HPCA",
     ],
     "Potassium": [
         "KCNMA1", "KCNMB1", "KCNMB2", "KCNMB3", "KCNMB4",
