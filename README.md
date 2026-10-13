@@ -1,5 +1,11 @@
 # 🚀 Mineral-Pathway Transcriptional and Molecular Responses to Spaceflight: A Multi-Omics Analysis of Astronaut and Rodent Data
 
+> [!IMPORTANT]
+> **This repository is archived.** It is an early version of the analysis (September 2026).
+> The current version, with corrected gene sets, citations and claims, is
+> **[astronaut-mineral-final](https://github.com/dr-richard-barker/astronaut-mineral-final)**
+> ([project page](https://dr-richard-barker.github.io/astronaut-mineral-final/)).
+
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.XXXXXXX-blue)](https://doi.org/10.5281/zenodo.XXXXXXX)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data_%26_Docs-CC_BY_4.0-lightgrey.svg)](LICENSE-CC-BY-4.0)
